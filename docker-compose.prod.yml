@@ -4,12 +4,13 @@ networks:
 
 services:
   php-rms:
-    build: .
     container_name: php-ci4-rms
-    volumes:
-      - .:/var/www/rms
-    working_dir: /var/www/rms
-    mem_limit: 384m
+    build:
+      context: .
+      args:
+        APP_ENV: prod
     restart: always
     networks:
       - appnet
+    environment:
+      CI_ENVIRONMENT: production

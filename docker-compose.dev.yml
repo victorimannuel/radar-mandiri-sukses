@@ -1,0 +1,17 @@
+networks:
+  appnet:
+    external: true
+
+services:
+  php-rms:
+    container_name: php-ci4-rms
+    build:
+      context: .
+      args:
+        APP_ENV: dev
+    volumes:
+      - .:/var/www/rms   # live code update
+    networks:
+      - appnet
+    environment:
+      CI_ENVIRONMENT: development
