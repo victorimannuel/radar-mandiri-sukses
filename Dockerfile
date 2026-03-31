@@ -19,8 +19,14 @@ COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 # Set working dir
 WORKDIR /var/www/rms
 
+# Fix ownership of the working directory upfront
+RUN chown www-data:www-data /var/www/rms
+
 # Copy composer files first (cache-friendly)
-COPY composer.json composer.lock ./
+COPY --chown=www-data:www-data composer.json composer.lock ./
+
+# Switch to www-data for composer install to ensure correct permissions
+USER www-data
 
 # Install PHP deps at build time (composer install)
 ARG APP_ENV=prod
@@ -30,11 +36,13 @@ RUN if [ "$APP_ENV" = "prod" ]; then \
         composer install --no-interaction --no-progress; \
     fi
 
-# Copy source code
-COPY . .
+# Copy source code (with correct ownership)
+COPY --chown=www-data:www-data . .
 
-# Fix permissions (CodeIgniter writable dirs)
-RUN chown -R www-data:www-data writable && chmod -R 775 writable
+# Ensure writable directory is truly writable
+RUN chmod -R 775 writable
 
-# Use www-data user
-USER www-data
+# Expose port (if needed by some setups, though FPM usually via socket/9000)
+EXPOSE 9000
+
+CMD ["php-fpm"]
