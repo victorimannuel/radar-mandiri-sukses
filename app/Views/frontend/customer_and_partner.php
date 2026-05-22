@@ -194,6 +194,12 @@
             <div class="flex animate-scroll gap-12">
                 <!-- Partner logos -->
                 <div class="flex-shrink-0 text-center">
+                    <img src="https://radar-ms.com/assets/images/partnerlogo/PT-GURINDAM-SINAR-BERKAH.png" loading="lazy" class="h-32 md:h-32 object-contain mx-auto"/>
+                </div>
+                <div class="flex-shrink-0 text-center">
+                    <img src="https://radar-ms.com/assets/images/partnerlogo/PT-MULTI-MARINE-SUKSES.png" loading="lazy" class="h-32 md:h-32 object-contain mx-auto"/>
+                </div>
+                <div class="flex-shrink-0 text-center">
                     <img src="https://radar-ms.com/assets/images/partnerlogo/IMG-20250922-WA0151.jpg" loading="lazy" class="h-32 md:h-32 object-contain mx-auto"/>
                 </div>
                 <div class="flex-shrink-0 text-center">
@@ -207,6 +213,12 @@
                 </div>
 
                 <!-- Repeat for seamless infinite scroll -->
+                <div class="flex-shrink-0 text-center">
+                    <img src="https://radar-ms.com/assets/images/partnerlogo/PT-GURINDAM-SINAR-BERKAH.png" loading="lazy" class="h-32 md:h-32 object-contain mx-auto"/>
+                </div>
+                <div class="flex-shrink-0 text-center">
+                    <img src="https://radar-ms.com/assets/images/partnerlogo/PT-MULTI-MARINE-SUKSES.png" loading="lazy" class="h-32 md:h-32 object-contain mx-auto"/>
+                </div>
                 <div class="flex-shrink-0 text-center">
                     <img src="https://radar-ms.com/assets/images/partnerlogo/IMG-20250922-WA0151.jpg" loading="lazy" class="h-32 md:h-32 object-contain mx-auto"/>
                 </div>
